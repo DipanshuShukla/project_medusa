@@ -73,6 +73,8 @@ class _SwiperPageState extends State<SwiperPage> {
     }
 
     return Scaffold(
+      //   bottomNavigationBar: NavBarWidget(),
+      //   extendBody: true,
       body: Container(
         decoration: const BoxDecoration(
           image: DecorationImage(
@@ -96,7 +98,7 @@ class _SwiperPageState extends State<SwiperPage> {
                   front: GlassTabWidget(
                     width: width * .9,
                     height: height * .75,
-                    children: [
+                    children: const [
                       InfoWidget(),
                       SpotifyPlayerWidget(),
                     ],
@@ -107,7 +109,7 @@ class _SwiperPageState extends State<SwiperPage> {
                       onPressed: () {
                         goToChat();
                       },
-                      icon: Icon(Icons.chat)),
+                      icon: Icon(Icons.chat))
                 ]
               ],
             ),

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:project_medusa/swiper/swiper_page.dart';
+import 'package:project_medusa/auth/services/auth_google.dart';
+import 'package:project_medusa/home_page.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:provider/provider.dart';
 import 'firebase_options.dart';
 
 void main() async {
@@ -17,9 +19,14 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      title: 'Project Medusa',
-      home: AuthenticationWrapper(),
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (context) => GoogleSignInProvider()),
+      ],
+      child: const MaterialApp(
+        title: 'Project Medusa',
+        home: AuthenticationWrapper(),
+      ),
     );
   }
 }
@@ -29,6 +36,6 @@ class AuthenticationWrapper extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const SwiperPage();
+    return const HomePage();
   }
 }
