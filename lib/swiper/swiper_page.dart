@@ -88,6 +88,7 @@ class _SwiperPageState extends State<SwiperPage> {
               children: [
                 FlipCard(
                   key: cardKey,
+                  flipOnTouch: false,
                   back: GlassTabWidget(
                     width: width * AnimatedWidthmultiplier,
                     height: height * AnimatedHeightmultiplier,
