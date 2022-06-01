@@ -29,13 +29,6 @@
             {
               "client_id": "448233567790-a3it2qpsv0f5u98j1b38kt4c0p39jt88.apps.googleusercontent.com",
               "client_type": 3
-            },
-            {
-              "client_id": "448233567790-2pdik5he5g1mpsal6qbia9skdeqc89dq.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "com.example.projectMedusa"
-              }
             }
           ]
         }
