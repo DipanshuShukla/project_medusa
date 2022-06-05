@@ -17,7 +17,7 @@ class HomeViewController extends StatelessWidget {
                 child: CircularProgressIndicator(),
               );
             } else if (snapshot.hasData) {
-              return const ChatPage();
+              return const SwiperPage();
             } else if (snapshot.hasError) {
               return const Center(
                 child: Text("Something went wrong!"),
