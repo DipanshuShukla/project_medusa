@@ -19,10 +19,12 @@ class AuthButtons extends StatefulWidget {
 class _AuthButtonsState extends State<AuthButtons> {
   @override
   Widget build(BuildContext context) {
+    double width = MediaQuery.of(context).size.width;
+    double height = MediaQuery.of(context).size.height;
     return Container(
       child: SizedBox(
-        width: 70,
-        height: 40,
+        width: width * .75,
+        height: height * .065,
         child: ClipRRect(
           borderRadius: BorderRadius.circular(30),
           child: TextButton(
