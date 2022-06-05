@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:project_medusa/chat/chat_page.dart';
 import 'package:project_medusa/swiper/widgets/glass_tab_widget.dart';
@@ -96,11 +97,21 @@ class _SwiperPageState extends State<SwiperPage> {
                 ),
               ),
               if (_blankGlassTab == false) ...[
-                IconButton(
-                    onPressed: () {
-                      goToChat();
-                    },
-                    icon: Icon(Icons.chat)),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    IconButton(
+                        onPressed: () {
+                          goToChat();
+                        },
+                        icon: Icon(Icons.chat)),
+                    IconButton(
+                        onPressed: () {
+                          FirebaseAuth.instance.signOut();
+                        },
+                        icon: Icon(Icons.logout)),
+                  ],
+                ),
               ]
             ],
           ),

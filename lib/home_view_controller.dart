@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:project_medusa/auth/auth_page.dart';
 import 'package:project_medusa/swiper/swiper_page.dart';
 import 'package:project_medusa/chat/chat_page.dart';
 
@@ -23,7 +24,7 @@ class HomeViewController extends StatelessWidget {
                 child: Text("Something went wrong!"),
               );
             } else {
-              return const SwiperPage();
+              return const AuthPage();
             }
           }),
     );

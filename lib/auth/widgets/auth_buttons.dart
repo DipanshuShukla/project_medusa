@@ -1,5 +1,9 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:project_medusa/services/facebook_sign_in.dart';
+import 'package:provider/provider.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:project_medusa/services/google_sign_in.dart';
 
 class AuthButtons extends StatefulWidget {
   final IconData icon = Icons.abc;
@@ -47,7 +51,11 @@ class GoogleSignInButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AuthButtons(
-      callback: () {},
+      callback: () {
+        final provider =
+            Provider.of<GoogleSignInProvider>(context, listen: false);
+        provider.googleLogin();
+      },
       method: "Google",
     );
   }
@@ -59,7 +67,11 @@ class FacebookSignInButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AuthButtons(
-      callback: () {},
+      callback: () {
+        final provider =
+            Provider.of<FacebookSignInProvider>(context, listen: false);
+        provider.FacebookLogin();
+      },
       method: "Facebook",
     );
   }

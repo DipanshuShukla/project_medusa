@@ -22,14 +22,8 @@ class _AuthPageState extends State<AuthPage> {
         width: width,
         children: [
           Spacer(),
-          AuthButtons(
-            method: "Google",
-            callback: () {},
-          ),
-          AuthButtons(
-            method: "Facebook",
-            callback: () {},
-          ),
+          GoogleSignInButton(),
+          FacebookSignInButton(),
           AuthButtons(
             method: "Phone Number",
             callback: () {},
