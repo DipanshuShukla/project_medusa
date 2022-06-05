@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:project_medusa/auth/auth_page.dart';
 import 'package:project_medusa/swiper/swiper_page.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
@@ -29,6 +30,6 @@ class AuthenticationWrapper extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const SwiperPage();
+    return const AuthPage();
   }
 }

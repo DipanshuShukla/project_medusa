@@ -5,6 +5,7 @@ import 'package:project_medusa/swiper/widgets/info_widget.dart';
 import 'package:project_medusa/swiper/widgets/spotify_player_widget.dart';
 import 'package:flip_card/flip_card.dart';
 import 'package:project_medusa/util/animationless_transition.dart';
+import 'package:project_medusa/util/new_page.dart';
 
 class SwiperPage extends StatefulWidget {
   const SwiperPage({Key? key}) : super(key: key);
@@ -72,45 +73,36 @@ class _SwiperPageState extends State<SwiperPage> {
       });
     }
 
-    return Scaffold(
-      body: Container(
-        decoration: const BoxDecoration(
-          image: DecorationImage(
-              //image: AssetImage("assets/images/lol.jpg"), fit: BoxFit.cover)
-              image: NetworkImage(
-                  "https://upload.wikimedia.org/wikipedia/en/2/2e/Ed_Sheeran_-_Bad_Habits_2.png"),
-              fit: BoxFit.cover),
-        ),
-        child: Center(
-          child: SingleChildScrollView(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                FlipCard(
-                  key: cardKey,
-                  flipOnTouch: false,
-                  back: GlassTabWidget(
-                    width: width * AnimatedWidthmultiplier,
-                    height: height * AnimatedHeightmultiplier,
-                  ),
-                  front: GlassTabWidget(
-                    width: width * .9,
-                    height: height * .75,
-                    children: [
-                      InfoWidget(),
-                      SpotifyPlayerWidget(),
-                    ],
-                  ),
+    return NewPage(
+      child: Center(
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              FlipCard(
+                key: cardKey,
+                flipOnTouch: false,
+                back: GlassTabWidget(
+                  width: width * AnimatedWidthmultiplier,
+                  height: height * AnimatedHeightmultiplier,
                 ),
-                if (_blankGlassTab == false) ...[
-                  IconButton(
-                      onPressed: () {
-                        goToChat();
-                      },
-                      icon: Icon(Icons.chat)),
-                ]
-              ],
-            ),
+                front: GlassTabWidget(
+                  width: width * .9,
+                  height: height * .75,
+                  children: [
+                    InfoWidget(),
+                    SpotifyPlayerWidget(),
+                  ],
+                ),
+              ),
+              if (_blankGlassTab == false) ...[
+                IconButton(
+                    onPressed: () {
+                      goToChat();
+                    },
+                    icon: Icon(Icons.chat)),
+              ]
+            ],
           ),
         ),
       ),
